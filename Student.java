@@ -1,18 +1,18 @@
 package lab1;
 
 public class Student {
-	private String name;		//ĞÕÃû
-	private char sex;			//ĞÔ±ğ
+	private String name;		//å§“å
+	private char sex;			//æ€§åˆ«
 	
 	
 	class Subject{
-		private String subject;		//¿ÆÄ¿Ãû³Æ
-		private String typeName;		//ĞÔÖÊ
-		private double attendance;		//³öÇÚ
-		private double homework;		//×÷Òµ
-		private double experiment;		//ÊµÑé
-		private double endofterm;		//ÆÚÄ©
-		private double total;			//×Ü·Ö
+		private String subject;		//ç§‘ç›®åç§°
+		private String typeName;		//æ€§è´¨
+		private double attendance;		//å‡ºå‹¤
+		private double homework;		//ä½œä¸š
+		private double experiment;		//å®éªŒ
+		private double endofterm;		//æœŸæœ«
+		private double total;			//æ€»åˆ†
 		public void setSubject(String subject,String typeName,double attendance,double homework,double experiment,double endofterm){
 			this.subject=subject;
 			this.typeName=typeName;
@@ -23,17 +23,17 @@ public class Student {
 
 		}
 		public String getSubject(){
-			return "¿ÆÄ¿Ãû³Æ:"+subject+",ĞÔÖÊ:"+typeName+",³öÇÚ:"+attendance+",×÷Òµ:"+homework+","
-					+ "ÊµÑé:"+experiment+",ÆÚÄ©:"+endofterm+",×Ü·Ö:"+total+"";
+			return "ç§‘ç›®åç§°:"+subject+",æ€§è´¨:"+typeName+",å‡ºå‹¤:"+attendance+",ä½œä¸š:"+homework+","
+					+ "å®éªŒ:"+experiment+",æœŸæœ«:"+endofterm+",æ€»åˆ†:"+total+"";
 		}
 		
 	}
 	static class subjectType{
-		String typeName;			//ĞÔÖÊ
-		double attenRatio;			//³öÇÚ±ÈÀı
-		static final double assignRatio=0.1;//×÷Òµ±ÈÀı
-		static final double labRatio=0.1;//ÊµÑé±ÈÀı
-		double finalRatio;//ÆÚÄ©±ÈÀı
+		String typeName;			//æ€§è´¨
+		double attenRatio;			//å‡ºå‹¤æ¯”ä¾‹
+		static final double assignRatio=0.1;//ä½œä¸šæ¯”ä¾‹
+		static final double labRatio=0.1;//å®éªŒæ¯”ä¾‹
+		double finalRatio;//æœŸæœ«æ¯”ä¾‹
 		void setRatio(String typeName,double attenRatio,double finalRatio){
 			this.typeName=typeName;
 			this.attenRatio=attenRatio;
@@ -43,16 +43,16 @@ public class Student {
 			
 		}
 	double printInfo(String typeName,double attendance,double homework,double experiment,double endofterm){
-		final double assignRatio=0.1;//×÷Òµ±ÈÀı
-		final double labRatio=0.1;//ÊµÑé±ÈÀı
+		final double assignRatio=0.1;//ä½œä¸šæ¯”ä¾‹
+		final double labRatio=0.1;//å®éªŒæ¯”ä¾‹
 		double attenRatio;
 		double finalRatio;
 		double total;
 		Student.subjectType b1=new Student.subjectType();
 		Student.subjectType b2=new Student.subjectType();
-		b1.setRatio("¿¼ÊÔ", 0.1, 0.7);
-		b2.setRatio("¿¼²é", 0.2, 0.6);
-		if(typeName=="¿¼ÊÔ"){
+		b1.setRatio("è€ƒè¯•", 0.1, 0.7);
+		b2.setRatio("è€ƒæŸ¥", 0.2, 0.6);
+		if(typeName=="è€ƒè¯•"){
 			total=attendance*b1.attenRatio+homework*b1.assignRatio+experiment*b1.labRatio+endofterm*b1.finalRatio;
 		}else{
 			total=attendance*b2.attenRatio+homework*b2.assignRatio+experiment*b2.labRatio+endofterm*b2.finalRatio;
@@ -67,18 +67,18 @@ public class Student {
 	}
 	
 	public String getname(){
-		return "ĞÕÃû:"+name+",ĞÔ±ğ:"+sex+"";
+		return "å§“å:"+name+",æ€§åˆ«:"+sex+"";
 	}
 	
 	void student1(){
 		Student s1=new Student();
-		s1.setStudnet("Àîºì",'Å®');
+		s1.setStudnet("æçº¢",'å¥³');
 		Subject sb1=s1.new Subject();
 		Subject sb2=s1.new Subject();
 		Subject sb3=s1.new Subject();
-		sb1.setSubject("Java", "¿¼²é", 90, 85, 75, 80);
-		sb2.setSubject("SQL", "¿¼ÊÔ", 80, 90, 82, 75);
-		sb3.setSubject("J2EE", "¿¼²é", 78, 70, 65, 70);
+		sb1.setSubject("Java", "è€ƒæŸ¥", 90, 85, 75, 80);
+		sb2.setSubject("SQL", "è€ƒè¯•", 80, 90, 82, 75);
+		sb3.setSubject("J2EE", "è€ƒæŸ¥", 78, 70, 65, 70);
 		sb1.total=printInfo(sb1.typeName,sb1.attendance,sb1.homework,sb1.experiment,sb1.endofterm);
 		sb2.total=printInfo(sb2.typeName,sb2.attendance,sb2.homework,sb2.experiment,sb2.endofterm);
 		sb3.total=printInfo(sb3.typeName,sb3.attendance,sb3.homework,sb3.experiment,sb3.endofterm);
@@ -87,13 +87,13 @@ public class Student {
 	
 	void student2(){
 		Student s1=new Student();
-		s1.setStudnet("ÍõÏşÃ÷",'ÄĞ');
+		s1.setStudnet("ç‹æ™“æ˜",'ç”·');
 		Subject sb1=s1.new Subject();
 		Subject sb2=s1.new Subject();
 		Subject sb3=s1.new Subject();
-		sb1.setSubject("Java", "¿¼²é", 86, 67, 71, 70);
-		sb2.setSubject("SQL", "¿¼ÊÔ", 77, 70, 85, 66);
-		sb3.setSubject("J2EE", "¿¼²é", 88, 74, 68, 80);
+		sb1.setSubject("Java", "è€ƒæŸ¥", 86, 67, 71, 70);
+		sb2.setSubject("SQL", "è€ƒè¯•", 77, 70, 85, 66);
+		sb3.setSubject("J2EE", "è€ƒæŸ¥", 88, 74, 68, 80);
 		sb1.total=printInfo(sb1.typeName,sb1.attendance,sb1.homework,sb1.experiment,sb1.endofterm);
 		sb2.total=printInfo(sb2.typeName,sb2.attendance,sb2.homework,sb2.experiment,sb2.endofterm);
 		sb3.total=printInfo(sb3.typeName,sb3.attendance,sb3.homework,sb3.experiment,sb3.endofterm);
@@ -108,6 +108,6 @@ public class Student {
 		
 
 	}
-}
+ }
 
 
